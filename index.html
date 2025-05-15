@@ -123,9 +123,73 @@
         height: 140px;
       }
     }
-  </style>
+      /* Toggle Styles */
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #0077b6;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.mode-label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+</style>
 </head>
 <body>
+<!-- Toggle Switch -->
+<div class="mode-toggle">
+  <label class="switch">
+    <input type="checkbox" id="modeToggle">
+    <span class="slider"></span>
+  </label>
+  <span class="mode-label">Recruiter Mode</span>
+</div>
+
+  <div id="recruiterMode">
   <div class="container">
     <div class="left-content">
       <div class="main-message">
@@ -179,5 +243,91 @@
       <img src="pieface_cropped_resized.png" alt="Matt with pie on face" class="circle-img">
     </div>
   </div>
+  </div>
+  
+<!-- Personal Mode (hidden by default) -->
+<div id="personalMode" style="display: none;">
+  <!-- Background Image -->
+  <div class="desktop-bg"></div>
+
+  <!-- File Explorer Windows -->
+  <div class="file-explorer" style="top: 40%; left: 55%;">
+    <div class="explorer-header">Personal Files</div>
+    <ul>
+      <li onclick="showWindow('about')">📁 About Me</li>
+      <li onclick="showWindow('hobbies')">📁 Hobbies</li>
+      <li onclick="showWindow('photos')">📁 Photos</li>
+    </ul>
+  </div>
+</div>
+/* Personal Mode Styles */
+.desktop-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://raw.githubusercontent.com/RayhaanFay/XFCE_The_Creation_Of_Adam/main/wallpapers/TheCreationOfAdam.png') center/cover;
+  z-index: -1;
+}
+
+.file-explorer {
+  position: absolute;
+  background: white;
+  border: 2px solid #111;
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.explorer-header {
+  background: #111;
+  color: white;
+  padding: 8px;
+  border-radius: 6px 6px 0 0;
+  font-weight: bold;
+}
+
+.file-explorer ul {
+  list-style: none;
+  padding: 12px;
+  margin: 0;
+}
+
+.file-explorer li {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.file-explorer li:hover {
+  background: #f0f0f0;
+}
+<script>
+  // Toggle between modes
+  const toggle = document.getElementById('modeToggle');
+  const recruiterMode = document.querySelector('#recruiterMode');
+  const personalMode = document.querySelector('#personalMode');
+  const modeLabel = document.querySelector('.mode-label');
+
+  toggle.addEventListener('change', function() {
+    if (this.checked) {
+      recruiterMode.style.display = 'none';
+      personalMode.style.display = 'block';
+      modeLabel.textContent = 'Personal Mode';
+    } else {
+      recruiterMode.style.display = 'block';
+      personalMode.style.display = 'none';
+      modeLabel.textContent = 'Recruiter Mode';
+    }
+  });
+
+  // Simple function to show windows (you can expand this)
+  function showWindow(type) {
+    alert(`This would open a ${type} window!`);
+  }
+</script>
+
 </body>
 </html>
+
+
