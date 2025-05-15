@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Matt Watts – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <!-- Simple MW Favicon as SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='100%' height='100%' fill='white'/><text x='50%' y='60%' font-size='32' font-family='Montserrat, Arial, sans-serif' text-anchor='middle' fill='black'>MW</text></svg>">
+  <style>
+    body {
+      background: #fff;
+      color: #222;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      max-width: 1100px;
+      width: 100%;
+      padding: 2rem 1rem;
+    }
+    .left-content {
+      flex: 1 1 0;
+      min-width: 270px;
+      max-width: 540px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .main-message {
+      font-size: 1.18rem;
+      color: #222;
+      margin-bottom: 2.2rem;
+      line-height: 1.6;
+      text-align: left;
+      font-weight: 400;
+    }
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      align-items: flex-start;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      font-size: 1rem;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .contact-link:hover {
+      color: #0077b6;
+    }
+    .icon {
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      vertical-align: middle;
+      fill: #111;
+      transition: fill 0.2s;
+    }
+    .contact-link:hover .icon {
+      fill: #0077b6;
+    }
+    .links-row {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    .right-image {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .circle-img {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #111;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      background: #fff;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 2rem 0.5rem;
+      }
+      .right-image .circle-img {
+        width: 220px;
+        height: 220px;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem 0.2rem;
+      }
+      .main-message {
+        font-size: 1rem;
+      }
+      .right-image .circle-img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+      /* Toggle Styles */
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #0077b6;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.mode-label {
+  font-size: 0.9rem;
+  color: #333;
+}
+.explorer-popup {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  min-width: 280px;
+  max-width: 90vw;
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  z-index: 100;
+}
+
+.explorer-header {
+  background: #111;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.explorer-content {
+  padding: 16px;
+  color: #222;
+}
+
+</style>
+</head>
+<body>
+<!-- Toggle Switch -->
+<div class="mode-toggle">
+  <label class="switch">
+    <input type="checkbox" id="modeToggle">
+    <span class="slider"></span>
+  </label>
+  <span class="mode-label">Recruiter Mode</span>
+</div>
+
+  <div id="recruiterMode">
+  <div class="container">
+    <div class="left-content">
+      <div class="main-message">
+          <h1>Matt Watts </h1>
+          <div class="subtitle">
+          Mechatronics Engineering Student<br>
+          University of Waterloo
+          </div>
+          --------------------------------------
+        <br>
+        <br>
+          <strong>Thanks for stopping by!</strong><br>
+        <br>
+          Unfortunately, my site is under reconstruction and updates right now.<br>
+          <br>
+          I hope this photo of myself getting pied in the face for charity helps remedy this blunder. <br>
+          <br>
+          Best, Matt :)
+      </div>
+      <div class="contact">
+        <a class="contact-link" href="mailto:matthew.watts@uwaterloo.ca">
+          <!-- Email Icon (black/white SVG) -->
+          <svg class="icon" viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm18 2l-8 6-8-6v12h16V6zm-8 4.5L4 6h16l-8 4.5z"/></svg>
+          matthew.watts@uwaterloo.ca
+        </a>
+        <a class="contact-link" href="tel:+18072715163">
+          <!-- Phone Icon (black/white SVG) -->
+          <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.2.48 2.53.73 3.88.73a1 1 0 011 1v3.5a1 1 0 01-1 1C7.82 22 2 16.18 2 8.5A1 1 0 013 7.5H6.5a1 1 0 011 1c0 1.35.25 2.68.73 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+          (807) 271-5163
+        </a>
+        <div class="links-row">
+          <a class="contact-link" href="https://www.linkedin.com/in/matthewhaddenwatts/" target="_blank">
+            <!-- LinkedIn Icon (black/white SVG) -->
+            <svg class="icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.29c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.29h-3v-4.5c0-1.07-.02-2.44-1.49-2.44-1.5 0-1.73 1.17-1.73 2.36v4.58h-3v-9h2.89v1.23h.04c.4-.76 1.37-1.56 2.82-1.56 3.01 0 3.57 1.98 3.57 4.56v5.77z"/></svg>
+            LinkedIn
+          </a>
+          <a class="contact-link" href="https://github.com/mtthewwatts" target="_blank">
+            <!-- GitHub Icon (black/white SVG) -->
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.613-4.042-1.613-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.932 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.399 3-.404 1.02.005 2.04.137 3 .404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.92.43.37.823 1.096.823 2.21 0 1.595-.015 2.88-.015 3.27 0 .32.218.694.825.576C20.565 21.797 24 17.298 24 12c0-6.63-5.373-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a class="contact-link" href="May13_Resume.pdf" target="_blank">
+            <!-- Resume Icon (black/white SVG, using a simple document icon) -->
+            <svg class="icon" viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5V9h5.5L13 3.5zM6 4h6v5a1 1 0 0 0 1 1h5v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/></svg>
+            Resume
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="right-image">
+      <img src="pieface_cropped_resized.png" alt="Matt with pie on face" class="circle-img">
+    </div>
+  </div>
+  </div>
+  
+<!-- Personal Mode (hidden by default) -->
+<div id="personalMode" style="display: none;">
+  <!-- Background Image -->
+  <div class="desktop-bg"></div>
+
+ <div class="desktop-bg"></div>
+
+<!-- Main File Explorer -->
+<div class="file-explorer" style="top: 40%; left: 55%;">
+  <div class="explorer-header">Personal Files</div>
+  <ul>
+    <li onclick="openWindow('about')">📁 About Me</li>
+    <li onclick="openWindow('hobbies')">📁 Hobbies</li>
+    <li onclick="openWindow('photos')">📁 Photos</li>
+  </ul>
+</div>
+
+<!-- Popup Windows -->
+<div id="aboutWindow" class="explorer-popup" style="display:none;">
+  <div class="explorer-header">
+    About Me
+    <span class="close-btn" onclick="closeWindow('about')">&times;</span>
+  </div>
+  <div class="explorer-content">
+    <p>Hi, I'm Matt Watts! This is my personal space. I love robotics, music, and making people laugh (as you can tell from my charity pie-face photo!).</p>
+  </div>
+</div>
+
+<div id="hobbiesWindow" class="explorer-popup" style="display:none;">
+  <div class="explorer-header">
+    Hobbies
+    <span class="close-btn" onclick="closeWindow('hobbies')">&times;</span>
+  </div>
+  <div class="explorer-content">
+    <ul>
+      <li>🎸 Playing guitar</li>
+      <li>🤖 Building robots</li>
+      <li>🏃 Running</li>
+      <li>📚 Reading sci-fi</li>
+    </ul>
+  </div>
+</div>
+
+<div id="photosWindow" class="explorer-popup" style="display:none;">
+  <div class="explorer-header">
+    Photos
+    <span class="close-btn" onclick="closeWindow('photos')">&times;</span>
+  </div>
+  <div class="explorer-content">
+    <p>Here's a fun photo of me getting pied in the face for charity!</p>
+    <img src="pieface_cropped_resized.png" alt="Matt with pie on face" style="width: 100%; border-radius: 8px;">
+  </div>
+</div>
+
+/* Personal Mode Styles */
+.desktop-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://raw.githubusercontent.com/RayhaanFay/XFCE_The_Creation_Of_Adam/main/wallpapers/TheCreationOfAdam.png') center/cover;
+  z-index: -1;
+}
+
+.file-explorer {
+  position: absolute;
+  background: white;
+  border: 2px solid #111;
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.explorer-header {
+  background: #111;
+  color: white;
+  padding: 8px;
+  border-radius: 6px 6px 0 0;
+  font-weight: bold;
+}
+
+.file-explorer ul {
+  list-style: none;
+  padding: 12px;
+  margin: 0;
+}
+
+.file-explorer li {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.file-explorer li:hover {
+  background: #f0f0f0;
+}
+<script>
+  // Toggle between modes
+  const toggle = document.getElementById('modeToggle');
+  const recruiterMode = document.querySelector('#recruiterMode');
+  const personalMode = document.querySelector('#personalMode');
+  const modeLabel = document.querySelector('.mode-label');
+
+  toggle.addEventListener('change', function() {
+    if (this.checked) {
+      recruiterMode.style.display = 'none';
+      personalMode.style.display = 'block';
+      modeLabel.textContent = 'Personal Mode';
+    } else {
+      recruiterMode.style.display = 'block';
+      personalMode.style.display = 'none';
+      modeLabel.textContent = 'Recruiter Mode';
+    }
+  });
+
+  // Simple function to show windows (you can expand this)
+  function showWindow(type) {
+    alert(`This would open a ${type} window!`);
+  }
+</script>
+<script>
+function openWindow(name) {
+  document.getElementById(name + 'Window').style.display = 'block';
+}
+function closeWindow(name) {
+  document.getElementById(name + 'Window').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
