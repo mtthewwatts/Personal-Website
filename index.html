@@ -400,6 +400,14 @@ input:checked + .slider:before {
     alert(`This would open a ${type} window!`);
   }
 </script>
+<script>
+function openWindow(name) {
+  document.getElementById(name + 'Window').style.display = 'block';
+}
+function closeWindow(name) {
+  document.getElementById(name + 'Window').style.display = 'none';
+}
+</script>
 
 </body>
 </html>
