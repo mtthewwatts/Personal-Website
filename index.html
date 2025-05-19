@@ -301,6 +301,31 @@ input:checked + .slider:before {
     sorry, still working on populating this side with my personality :)
   </div>
 </div>
+<script>
+  // Get references to elements
+  const modeToggle = document.getElementById('modeToggle');
+  const recruiterMode = document.getElementById('recruiterMode');
+  const personalMode = document.getElementById('personalMode');
+  const modeLabel = document.querySelector('.mode-label');
+
+  // Set initial state (checked = recruiter)
+  modeToggle.checked = true;
+  recruiterMode.style.display = '';
+  personalMode.style.display = 'none';
+
+  // Listen for toggle changes
+  modeToggle.addEventListener('change', function() {
+    if (this.checked) {
+      recruiterMode.style.display = '';
+      personalMode.style.display = 'none';
+      modeLabel.textContent = 'Recruiter Mode';
+    } else {
+      recruiterMode.style.display = 'none';
+      personalMode.style.display = '';
+      modeLabel.textContent = 'Personal Mode';
+    }
+  });
+</script>
 
 
 </body>
