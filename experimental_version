@@ -211,6 +211,22 @@ input:checked + .slider:before {
   padding: 16px;
   color: #222;
 }
+.personal-placeholder {
+  background: #000;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
 
 </style>
 </head>
@@ -280,134 +296,12 @@ input:checked + .slider:before {
   </div>
   </div>
   
-<!-- Personal Mode (hidden by default) -->
 <div id="personalMode" style="display: none;">
-  <!-- Background Image -->
-  <div class="desktop-bg"></div>
-
- <div class="desktop-bg"></div>
-
-<!-- Main File Explorer -->
-<div class="file-explorer" style="top: 40%; left: 55%;">
-  <div class="explorer-header">Personal Files</div>
-  <ul>
-    <li onclick="openWindow('about')">📁 About Me</li>
-    <li onclick="openWindow('hobbies')">📁 Hobbies</li>
-    <li onclick="openWindow('photos')">📁 Photos</li>
-  </ul>
-</div>
-
-<!-- Popup Windows -->
-<div id="aboutWindow" class="explorer-popup" style="display:none;">
-  <div class="explorer-header">
-    About Me
-    <span class="close-btn" onclick="closeWindow('about')">&times;</span>
-  </div>
-  <div class="explorer-content">
-    <p>Hi, I'm Matt Watts! This is my personal space. I love robotics, music, and making people laugh (as you can tell from my charity pie-face photo!).</p>
+  <div class="personal-placeholder">
+    sorry, still working on populating this side with my personality :)
   </div>
 </div>
 
-<div id="hobbiesWindow" class="explorer-popup" style="display:none;">
-  <div class="explorer-header">
-    Hobbies
-    <span class="close-btn" onclick="closeWindow('hobbies')">&times;</span>
-  </div>
-  <div class="explorer-content">
-    <ul>
-      <li>🎸 Playing guitar</li>
-      <li>🤖 Building robots</li>
-      <li>🏃 Running</li>
-      <li>📚 Reading sci-fi</li>
-    </ul>
-  </div>
-</div>
-
-<div id="photosWindow" class="explorer-popup" style="display:none;">
-  <div class="explorer-header">
-    Photos
-    <span class="close-btn" onclick="closeWindow('photos')">&times;</span>
-  </div>
-  <div class="explorer-content">
-    <p>Here's a fun photo of me getting pied in the face for charity!</p>
-    <img src="pieface_cropped_resized.png" alt="Matt with pie on face" style="width: 100%; border-radius: 8px;">
-  </div>
-</div>
-
-/* Personal Mode Styles */
-.desktop-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('https://raw.githubusercontent.com/RayhaanFay/XFCE_The_Creation_Of_Adam/main/wallpapers/TheCreationOfAdam.png') center/cover;
-  z-index: -1;
-}
-
-.file-explorer {
-  position: absolute;
-  background: white;
-  border: 2px solid #111;
-  border-radius: 8px;
-  width: 200px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.explorer-header {
-  background: #111;
-  color: white;
-  padding: 8px;
-  border-radius: 6px 6px 0 0;
-  font-weight: bold;
-}
-
-.file-explorer ul {
-  list-style: none;
-  padding: 12px;
-  margin: 0;
-}
-
-.file-explorer li {
-  padding: 6px;
-  cursor: pointer;
-}
-
-.file-explorer li:hover {
-  background: #f0f0f0;
-}
-<script>
-  // Toggle between modes
-  const toggle = document.getElementById('modeToggle');
-  const recruiterMode = document.querySelector('#recruiterMode');
-  const personalMode = document.querySelector('#personalMode');
-  const modeLabel = document.querySelector('.mode-label');
-
-  toggle.addEventListener('change', function() {
-    if (this.checked) {
-      recruiterMode.style.display = 'none';
-      personalMode.style.display = 'block';
-      modeLabel.textContent = 'Personal Mode';
-    } else {
-      recruiterMode.style.display = 'block';
-      personalMode.style.display = 'none';
-      modeLabel.textContent = 'Recruiter Mode';
-    }
-  });
-
-  // Simple function to show windows (you can expand this)
-  function showWindow(type) {
-    alert(`This would open a ${type} window!`);
-  }
-</script>
-<script>
-function openWindow(name) {
-  document.getElementById(name + 'Window').style.display = 'block';
-}
-function closeWindow(name) {
-  document.getElementById(name + 'Window').style.display = 'none';
-}
-</script>
 
 </body>
 </html>
