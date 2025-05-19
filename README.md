@@ -1,10 +1,17 @@
-# Temporary Personal Website
+# Personal Website
 
-> ⚠️ This is a **temporary** personal website repository.
+> 🌓 This site features both **professional** and **personal** views, use the toggle in the corner to switch modes.
 
-## 🛠️ Why?
+## 🧭 What is this?
 
-I'm currently working on a more **complete and polished** portfolio site.
-In the meantime, this version serves as a placeholder to keep my presence online. 🌐
+This is my website to share who I am, what I do, and what I enjoy.
+Whether you're here to explore my **professional work** or get a glimpse of my **personal side**, you can switch between both with ease.
 
-Stay tuned for the full version — coming soon! 🚀
+## 🛠️ Why the Dual Modes?
+
+I believe that personality and professionalism aren't mutually exclusive.
+This site is designed to reflect both my engineering projects and technical experience to hobbies, thoughts, and creative explorations.
+
+Thanks for visiting — feel free to explore! 🌐
+
+
