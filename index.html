@@ -123,142 +123,22 @@
         height: 140px;
       }
     }
-      /* Toggle Styles */
-.mode-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 1000;
-}
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 24px;
-}
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-}
-input:checked + .slider {
-  background-color: #0077b6;
-}
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-.mode-label {
-  font-size: 0.9rem;
-  color: #333;
-}
-.explorer-popup {
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  min-width: 280px;
-  max-width: 90vw;
-  background: #fff;
-  border: 2px solid #111;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  z-index: 100;
-}
-
-.explorer-header {
-  background: #111;
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 8px 8px 0 0;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.close-btn {
-  cursor: pointer;
-  font-size: 1.3em;
-  font-weight: bold;
-  margin-left: 20px;
-}
-
-.explorer-content {
-  padding: 16px;
-  color: #222;
-}
-.personal-placeholder {
-  background: #000;
-  color: #fff;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-family: 'Montserrat', Arial, sans-serif;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
-</style>
+  </style>
 </head>
 <body>
-<!-- Toggle Switch -->
-<div class="mode-toggle">
-  <label class="switch">
-    <input type="checkbox" id="modeToggle">
-    <span class="slider"></span>
-  </label>
-  <span class="mode-label">Recruiter Mode</span>
-</div>
-
-  <div id="recruiterMode">
   <div class="container">
     <div class="left-content">
       <div class="main-message">
-          <h1>Matt Watts </h1>
-          <div class="subtitle">
+        <h1>Matt Watts</h1>
+        <div class="subtitle">
           Mechatronics Engineering Student<br>
           University of Waterloo
-          </div>
-          --------------------------------------
-        <br>
-        <br>
-          <strong>Thanks for stopping by!</strong><br>
-        <br>
-          Unfortunately, my site is under reconstruction and updates right now.<br>
-          <br>
-          I hope this photo of myself getting pied in the face for charity helps remedy this blunder. <br>
-          <br>
-          Best, Matt :)
+        </div>
+        --------------------------------------
+        <br><br>
+        <strong>Thanks for stopping by!</strong><br><br>
+        Unfortunately, my site is under reconstruction and updates right now.<br><br>
+        Best, Matt :)
       </div>
       <div class="contact">
         <a class="contact-link" href="mailto:matthew.watts@uwaterloo.ca">
@@ -291,42 +171,8 @@ input:checked + .slider:before {
       </div>
     </div>
     <div class="right-image">
-      <img src="pieface_cropped_resized.png" alt="Matt with pie on face" class="circle-img">
+      <img src="Assets/headshot.jpg" alt="Matt Watts headshot" class="circle-img">
     </div>
   </div>
-  </div>
-  
-<div id="personalMode" style="display: none;">
-  <div class="personal-placeholder">
-    sorry, still working on populating this side with my personality :)
-  </div>
-</div>
-<script>
-  // Get references to elements
-  const modeToggle = document.getElementById('modeToggle');
-  const recruiterMode = document.getElementById('recruiterMode');
-  const personalMode = document.getElementById('personalMode');
-  const modeLabel = document.querySelector('.mode-label');
-
-  // Set initial state (checked = recruiter)
-  modeToggle.checked = true;
-  recruiterMode.style.display = '';
-  personalMode.style.display = 'none';
-
-  // Listen for toggle changes
-  modeToggle.addEventListener('change', function() {
-    if (this.checked) {
-      recruiterMode.style.display = '';
-      personalMode.style.display = 'none';
-      modeLabel.textContent = 'Recruiter Mode';
-    } else {
-      recruiterMode.style.display = 'none';
-      personalMode.style.display = '';
-      modeLabel.textContent = 'Personal Mode';
-    }
-  });
-</script>
-
-
 </body>
 </html>
