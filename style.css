@@ -1,7 +1,5 @@
 
-        /* ============================================
-           GLOBAL RESET & BASE STYLES
-           ============================================ */
+        /* Global Reset and Base Values */
         * {
             margin: 0;
             padding: 0;
@@ -16,51 +14,48 @@
         /* Import Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
-        /* ============================================
-           MAIN CONTAINER (Dark blue section)
-           ============================================ */
+        /* Main Container */
         .container {
             /* Full viewport height minimum */
             min-height: 100vh;
-            /* Solid dark blue background - updated to specified hex code */
+            /* Solid dark blue background */
             background: #071A3B;
-            /* Generous padding on all sides - adjust for more/less whitespace */
+            /* Generous padding */
             padding: 60px 40px;
             /* Updated text color to warm off-white */
             color: #FFF8F0;
         }
 
-        /* ============================================
-           12-COLUMN GRID SYSTEM
-           ============================================ */
+        /* 12-Column Grid System */
         .grid-container {
+                
             /* 12 equal columns with gaps between them */
             display: grid;
             grid-template-columns: repeat(12, 1fr);
-            /* Gutter between columns - 14px as specified */
+        
+            /* Gutter between columns */
             gap: 14px;
-            /* Maximum width of entire grid - 1440px as specified */
+                
+            /* Page Dimensions */
             max-width: 1440px;
-            /* Fixed height to match width for square layout */
             min-height: 1440px;
             margin: 0 auto;
-            /* Margin on left and right sides - 28px as specified */
+                
+            /* Margin on left and right sides*/
             padding: 0 28px;
         }
 
-        /* ============================================
-           PROFILE SECTION (Top intro area)
-           ============================================ */
+        /* Profile Section */
         .profile-section {
             /* Spans center 6 columns (columns 4-9) */
             grid-column: 4 / 10;
-            /* Space below profile section - adjust to move experience section closer/further */
-            margin-bottom: 60px;
+            /* Space below profile section */
+            margin-bottom: 20px;
         }
 
         /* Profile photo styling */
         .profile-image {
-            /* Fixed size - adjust both width and height to make image larger/smaller */
+            /* Fixed size */
             width: 120px;
             height: 120px;
             /* Makes image circular */
