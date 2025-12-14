@@ -65,7 +65,7 @@
             /* Space between image and text below */
             margin-bottom: 30px;
             /* Subtle border around image - adjust opacity or remove entirely */
-            border: 4px solid rgba(255, 248, 240, 0.1);
+            border: 4px solid color: #FFF8F0;
             /* Aligns image to the LEFT side of the 6-column area */
             margin-right: auto;
             display: block;
@@ -81,7 +81,7 @@
             /* Updated to warm off-white color */
             color: #FFF8F0;
             /* Space below paragraph */
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             /* Left-aligned text */
             text-align: left;
         }
@@ -89,11 +89,11 @@
         /* Wave divider (~) between sections */
         .divider {
             /* Large size for visual impact - adjust for bigger/smaller divider */
-            font-size: 40px;
+            font-size: 200px;
             /* Updated to warm off-white color with reduced opacity */
             color: rgba(255, 248, 240, 0.2);
             /* Vertical spacing around divider */
-            margin: 40px 0;
+            margin: 20px 0;
             /* Centers the ~ within the 6-column section */
             text-align: center;
         }
@@ -102,19 +102,17 @@
         .personal-info {
             /* Uses Instrument Sans font */
             font-family: 'Instrument Sans', sans-serif;
-            font-size: 15px;
+            font-size: 118px;
             line-height: 1.6;
             /* Updated to warm off-white color */
             color: #FFF8F0;
             /* Space before experience section */
-            margin-bottom: 60px;
+            margin-bottom: 40x;
             /* Left-aligned text */
             text-align: left;
         }
 
-        /* ============================================
-           EXPERIENCE SECTION
-           ============================================ */
+        /* Experience Section */
         .experience-section {
             /* Spans center 6 columns (columns 4-9) - same as profile section */
             grid-column: 4 / 10;
@@ -127,12 +125,12 @@
             /* Small caps style text */
             font-size: 12px;
             /* Spacing between letters for all-caps look */
-            letter-spacing: 2px;
+            letter-spacing: 0.5px;
             /* Updated to warm off-white color with reduced opacity */
             color: rgba(255, 248, 240, 0.5);
             /* Space between title and first experience item */
             margin-bottom: 30px;
-            font-weight: 600;
+            font-weight: 100;
         }
 
         /* Each individual job entry */
@@ -205,14 +203,12 @@
             color: rgba(255, 248, 240, 0.6);
         }
 
-        /* ============================================
-           CONTACT SECTION
-           ============================================ */
+        /* Contact Section */
         .contact-section {
             /* Spans center 4 columns (columns 5-8) - narrower than other sections */
             grid-column: 5 / 9;
             /* Space above contact section - adjust to move it closer/further from experience */
-            margin-top: 60px;
+            margin-top: 20px;
         }
 
         /* "CONNECT" heading */
@@ -220,11 +216,11 @@
             /* Uses Instrument Sans font */
             font-family: 'Instrument Sans', sans-serif;
             font-size: 12px;
-            letter-spacing: 2px;
+            letter-spacing: 0.5px;
             /* Updated to warm off-white color with reduced opacity */
             color: rgba(255, 248, 240, 0.5);
-            margin-bottom: 20px;
-            font-weight: 600;
+            margin-bottom: 10px;
+            font-weight: 100;
             /* Left-aligned within the 4-column area */
             text-align: left;
         }
@@ -262,9 +258,7 @@
             color: rgba(255, 248, 240, 0.5);
         }
 
-        /* ============================================
-           PROJECTS PLACEHOLDER
-           ============================================ */
+        /* Projects Placeholder */
         .projects-note {
             /* Spans center 6 columns to match other content sections */
             grid-column: 4 / 10;
@@ -278,19 +272,10 @@
             text-align: center;
         }
 
-        /* ============================================
-           RESPONSIVE DESIGN (Mobile)
-           ============================================ */
+        /* Responsive Design */
+
         /* Apply these styles on screens 768px wide or smaller */
         @media (max-width: 768px) {
-            /* All sections span full width on mobile */
-            .profile-section,
-            .experience-section,
-            .contact-section,
-            .projects-note {
-                grid-column: 1 / -1;
-            }
-
             /* Stack experience items vertically on mobile */
             .experience-item {
                 flex-direction: column;
@@ -300,11 +285,5 @@
             .experience-right {
                 text-align: left;
                 margin-top: 10px;
-            }
-
-            /* Center profile image on mobile */
-            .profile-image {
-                margin-left: auto;
-                margin-right: auto;
             }
         }
