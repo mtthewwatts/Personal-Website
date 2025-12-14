@@ -88,7 +88,7 @@
 
         /* Wave divider (~) between sections */
         .divider {
-            /* Large size for visual impact - adjust for bigger/smaller divider */
+            /* Large size for visual impact */
             font-size: 200px;
             /* Updated to warm off-white color with reduced opacity */
             color: rgba(255, 248, 240, 0.2);
