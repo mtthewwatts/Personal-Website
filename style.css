@@ -19,8 +19,6 @@
         min-height: 100vh;
         /* Solid dark blue background */
         background: #071A3B;
-        /* Generous padding */
-        padding: 60px 40px;
         /* Updated text color to warm off-white */
         color: #FFF8F0;
     }
@@ -70,7 +68,8 @@
     .intro-text {
         /* Uses Instrument Sans font */
         font-family: 'Instrument Sans', sans-serif;
-        font-size: 16px;
+        font-size: 20px;
+        letter-spacing: 1 px;
         /* Line spacing for readability */
         line-height: 1.6;
         /* Updated to warm off-white color */
@@ -93,7 +92,8 @@
     .personal-info {
         /* Uses Instrument Sans font */
         font-family: 'Instrument Sans', sans-serif;
-        font-size: 16px;
+        font-size: 20px;
+        letter-spacing: 1 px;
         line-height: 1.6;
         /* Updated to warm off-white color */
         color: #FFF8F0;
