@@ -1,276 +1,271 @@
+    /* Global Reset and Base Values */
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        /* Global Reset and Base Values */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    body {
+    /* Default font is Inter for body text */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    /* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+    /* Main Container */
+    .container {
+        /* Full viewport height minimum */
+        min-height: 100vh;
+        /* Solid dark blue background */
+        background: #071A3B;
+        /* Generous padding */
+        padding: 60px 40px;
+        /* Updated text color to warm off-white */
+        color: #FFF8F0;
+    }
+
+    /* 12-Column Grid System */
+    .grid-container {       
+        /* 12 equal columns with gaps between them */
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        /* Gutter between columns */
+        gap: 14px;
+        /* Page Dimensions */
+        max-width: 1440px;
+        min-height: 1440px;
+        margin: 0 auto;
+        /* Margin on left and right sides*/
+        padding: 0 28px;
+    }   
+
+    /* Profile Section */
+    .profile-section {
+        /* Spans center 6 columns (columns 4-9) */
+        grid-column: 4 / 10;
+        /* Space below profile section */
+        margin-bottom: 20px;
+    }
+
+    /* Profile photo styling */
+    .profile-image {
+     /* Fixed size */
+    width: 120px;
+    height: 120px;
+    /* Makes image circular */
+    border-radius: 50%;
+    /* Ensures image covers the circle properly */
+    object-fit: cover;
+    /* Space between image and text below */
+    margin-bottom: 30px;
+    /* Subtle border around image - adjust opacity or remove entirely */
+    border: 4px color #FFF8F0;
+    /* Aligns image to the LEFT side of the 6-column area */
+    margin-right: auto;
+    display: block;
+    }
+
+    /* Main introduction paragraph */
+    .intro-text {
+        /* Uses Instrument Sans font */
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 16px;
+        /* Line spacing for readability */
+        line-height: 1.6;
+        /* Updated to warm off-white color */
+        color: #FFF8F0;
+        /* Space below paragraph */
+        margin-bottom: 20px;
+        /* Left-aligned text */
+        text-align: left;
+    }
+
+    /* Wave divider (~) between sections */
+    .divider {
+        /* Large size for visual impact - adjust for bigger/smaller divider */
+        font-size: 200px;
+        /* Updated to warm off-white color with reduced opacity */
+        color: rgba(255, 248, 240, 0.2);
+        /* Vertical spacing around divider */
+        margin: 5px 0;
+        /* Centers the ~ within the 6-column section */
+        text-align: center;
+    }
+
+    /* Personal interests paragraph */
+    .personal-info {
+        /* Uses Instrument Sans font */
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        /* Updated to warm off-white color */
+        color: #FFF8F0;
+        /* Space before experience section */
+        margin-bottom: 40x;
+        /* Left-aligned text */
+        text-align: left;
+    }
+
+    /* Experience Section */
+    .experience-section {
+        /* Spans center 6 columns (columns 4-9) - same as profile section */
+        grid-column: 4 / 10;
+    }
+
+    /* "HIGHLIGHTED EXPERIENCE" heading */
+    .section-title {
+        /* Uses Instrument Sans font */
+        font-family: 'Instrument Sans', sans-serif;
+        /* Small caps style text */
+        font-size: 12px;
+        /* Spacing between letters for all-caps look */
+        letter-spacing: 0.5px;
+        /* Updated to warm off-white color with reduced opacity */
+        color: rgba(255, 248, 240, 0.5);
+        /* Space between title and first experience item */
+        margin-bottom: 30px;
+        font-weight: 100;
+    }
+
+    /* Each individual job entry */
+    .experience-item {
+        /* Flexbox to put job title on left, date/location on right */
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* Space between job entries */
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        /* Subtle divider line between entries - adjust opacity or color */
+        border-bottom: 1px solid rgba(255, 248, 240, 0.1);
+    }
+
+    /* Remove border from last experience item */
+    .experience-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Left side of experience item (job title and company) */
+    .experience-left {
+        /* Takes up remaining space */
+        flex: 1;
+    }
+
+    /* Job title (e.g., "Mechanical Designer") */
+    .experience-title {
+        /* Uses Inter font (default body font) */
+        font-family: 'Inter', sans-serif;
+        /* Larger text with medium weight (less bold) */
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        /* Updated to warm off-white color */
+        color: #FFF8F0;
         }
 
-        body {
-            /* Default font is Inter for body text */
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
+    /* Company name and type (e.g., "Co-Op, Samuel Automation") */
+    .experience-company {
+        /* Uses Inter font (default body font) */
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        /* Updated to warm off-white color with reduced opacity */
+        color: rgba(255, 248, 240, 0.7);
+    }
 
-        /* Import Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+    /* Right side of experience item (date and location) */
+    .experience-right {
+        /* Right-aligned text */
+        text-align: right;
+    }
 
-        /* Main Container */
-        .container {
-            /* Full viewport height minimum */
-            min-height: 100vh;
-            /* Solid dark blue background */
-            background: #071A3B;
-            /* Generous padding */
-            padding: 60px 40px;
-            /* Updated text color to warm off-white */
-            color: #FFF8F0;
-        }
+    /* Date range (e.g., "Sept 2025 - Present") */
+    .experience-date {
+        /* Uses Inter font (default body font) */
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        /* Updated to warm off-white color with reduced opacity */
+        color: rgba(255, 248, 240, 0.6);
+        margin-bottom: 5px;
+    }
 
-        /* 12-Column Grid System */
-        .grid-container {
-                
-            /* 12 equal columns with gaps between them */
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-        
-            /* Gutter between columns */
-            gap: 14px;
-                
-            /* Page Dimensions */
-            max-width: 1440px;
-            min-height: 1440px;
-            margin: 0 auto;
-                
-            /* Margin on left and right sides*/
-            padding: 0 28px;
-        }
+    /* Location (e.g., "Waterloo, Ontario") */
+    .experience-location {
+        /* Uses Inter font (default body font) */
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        /* Updated to warm off-white color with reduced opacity */
+        color: rgba(255, 248, 240, 0.6);
+    }
 
-        /* Profile Section */
-        .profile-section {
-            /* Spans center 6 columns (columns 4-9) */
-            grid-column: 4 / 10;
-            /* Space below profile section */
-            margin-bottom: 20px;
-        }
+    /* Contact Section */
+    .contact-section {
+        /* Spans center 4 columns (columns 5-8) - narrower than other sections */
+        grid-column: 5 / 9;
+        /* Space above contact section - adjust to move it closer/further from experience */
+        margin-top: 20px;
+    }
 
-        /* Profile photo styling */
-        .profile-image {
-            /* Fixed size */
-            width: 120px;
-            height: 120px;
-            /* Makes image circular */
-            border-radius: 50%;
-            /* Ensures image covers the circle properly */
-            object-fit: cover;
-            /* Space between image and text below */
-            margin-bottom: 30px;
-            /* Subtle border around image - adjust opacity or remove entirely */
-            border: 4px solid color: #FFF8F0;
-            /* Aligns image to the LEFT side of the 6-column area */
-            margin-right: auto;
-            display: block;
-        }
+    /* "CONNECT" heading */
+    .contact-title {
+        /* Uses Instrument Sans font */
+        font-family: 'Instrument Sans', sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        /* Updated to warm off-white color with reduced opacity */
+        color: rgba(255, 248, 240, 0.5);
+        margin-bottom: 10px;
+        font-weight: 100;
+        /* Left-aligned within the 4-column area */
+        text-align: left;
+    }
 
-        /* Main introduction paragraph */
-        .intro-text {
-            /* Uses Instrument Sans font */
-            font-family: 'Instrument Sans', sans-serif;
-            font-size: 16px;
-            /* Line spacing for readability - adjust between 1.4-1.8 for tighter/looser spacing */
-            line-height: 1.6;
-            /* Updated to warm off-white color */
-            color: #FFF8F0;
-            /* Space below paragraph */
-            margin-bottom: 20px;
-            /* Left-aligned text */
-            text-align: left;
-        }
+    /* Container for all contact links */
+    .contact-links {
+        /* Stack links vertically */
+        display: flex;
+        flex-direction: column;
+        /* Space between each link - adjust for more/less spacing */
+        gap: 10px;
+        /* Left-aligned links */
+        align-items: flex-start;
+    }
 
-        /* Wave divider (~) between sections */
-        .divider {
-            /* Large size for visual impact */
-            font-size: 200px;
-            /* Updated to warm off-white color with reduced opacity */
-            color: rgba(255, 248, 240, 0.2);
-            /* Vertical spacing around divider */
-            margin: 20px 0;
-            /* Centers the ~ within the 6-column section */
-            text-align: center;
-        }
+    /* Individual contact link styling */
+    .contact-link {
+        /* Uses Instrument Sans font */
+        font-family: 'Instrument Sans', sans-serif;
+        /* Updated to warm off-white color with reduced opacity */
+        color: rgba(255, 248, 240, 0.8);
+        text-decoration: none;
+        font-size: 15px;
+        /* Smooth color transition on hover */
+        transition: color 0.3s ease;
+    }
 
-        /* Personal interests paragraph */
-        .personal-info {
-            /* Uses Instrument Sans font */
-            font-family: 'Instrument Sans', sans-serif;
-            font-size: 118px;
-            line-height: 1.6;
-            /* Updated to warm off-white color */
-            color: #FFF8F0;
-            /* Space before experience section */
-            margin-bottom: 40x;
-            /* Left-aligned text */
-            text-align: left;
-        }
+    /* Hover effect for links - brightens to full warm off-white */
+    .contact-link:hover {
+        color: #FFF8F0;
+    }
 
-        /* Experience Section */
-        .experience-section {
-            /* Spans center 6 columns (columns 4-9) - same as profile section */
-            grid-column: 4 / 10;
-        }
+    /* Subdued text for link prefixes (e.g., "linkedin.com/" part) */
+    .contact-link span {
+        color: rgba(255, 248, 240, 0.5);
+    }
 
-        /* "HIGHLIGHTED EXPERIENCE" heading */
-        .section-title {
-            /* Uses Instrument Sans font */
-            font-family: 'Instrument Sans', sans-serif;
-            /* Small caps style text */
-            font-size: 12px;
-            /* Spacing between letters for all-caps look */
-            letter-spacing: 0.5px;
-            /* Updated to warm off-white color with reduced opacity */
-            color: rgba(255, 248, 240, 0.5);
-            /* Space between title and first experience item */
-            margin-bottom: 30px;
-            font-weight: 100;
-        }
-
-        /* Each individual job entry */
-        .experience-item {
-            /* Flexbox to put job title on left, date/location on right */
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            /* Space between job entries */
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            /* Subtle divider line between entries - adjust opacity or color */
-            border-bottom: 1px solid rgba(255, 248, 240, 0.1);
-        }
-
-        /* Remove border from last experience item */
-        .experience-item:last-child {
-            border-bottom: none;
-        }
-
-        /* Left side of experience item (job title and company) */
-        .experience-left {
-            /* Takes up remaining space */
-            flex: 1;
-        }
-
-        /* Job title (e.g., "Mechanical Designer") */
-        .experience-title {
-            /* Uses Inter font (default body font) */
-            font-family: 'Inter', sans-serif;
-            /* Larger text with medium weight (less bold) */
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 5px;
-            /* Updated to warm off-white color */
-            color: #FFF8F0;
-        }
-
-        /* Company name and type (e.g., "Co-Op, Samuel Automation") */
-        .experience-company {
-            /* Uses Inter font (default body font) */
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            /* Updated to warm off-white color with reduced opacity */
-            color: rgba(255, 248, 240, 0.7);
-        }
-
-        /* Right side of experience item (date and location) */
-        .experience-right {
-            /* Right-aligned text */
-            text-align: right;
-        }
-
-        /* Date range (e.g., "Sept 2025 - Present") */
-        .experience-date {
-            /* Uses Inter font (default body font) */
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            /* Updated to warm off-white color with reduced opacity */
-            color: rgba(255, 248, 240, 0.6);
-            margin-bottom: 5px;
-        }
-
-        /* Location (e.g., "Waterloo, Ontario") */
-        .experience-location {
-            /* Uses Inter font (default body font) */
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            /* Updated to warm off-white color with reduced opacity */
-            color: rgba(255, 248, 240, 0.6);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            /* Spans center 4 columns (columns 5-8) - narrower than other sections */
-            grid-column: 5 / 9;
-            /* Space above contact section - adjust to move it closer/further from experience */
-            margin-top: 20px;
-        }
-
-        /* "CONNECT" heading */
-        .contact-title {
-            /* Uses Instrument Sans font */
-            font-family: 'Instrument Sans', sans-serif;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-            /* Updated to warm off-white color with reduced opacity */
-            color: rgba(255, 248, 240, 0.5);
-            margin-bottom: 10px;
-            font-weight: 100;
-            /* Left-aligned within the 4-column area */
-            text-align: left;
-        }
-
-        /* Container for all contact links */
-        .contact-links {
-            /* Stack links vertically */
-            display: flex;
-            flex-direction: column;
-            /* Space between each link - adjust for more/less spacing */
-            gap: 10px;
-            /* Left-aligned links */
-            align-items: flex-start;
-        }
-
-        /* Individual contact link styling */
-        .contact-link {
-            /* Uses Instrument Sans font */
-            font-family: 'Instrument Sans', sans-serif;
-            /* Updated to warm off-white color with reduced opacity */
-            color: rgba(255, 248, 240, 0.8);
-            text-decoration: none;
-            font-size: 15px;
-            /* Smooth color transition on hover */
-            transition: color 0.3s ease;
-        }
-
-        /* Hover effect for links - brightens to full warm off-white */
-        .contact-link:hover {
-            color: #FFF8F0;
-        }
-
-        /* Subdued text for link prefixes (e.g., "linkedin.com/" part) */
-        .contact-link span {
-            color: rgba(255, 248, 240, 0.5);
-        }
-
-        /* Projects Placeholder */
-        .projects-note {
-            /* Spans center 6 columns to match other content sections */
-            grid-column: 4 / 10;
-            /* Extra space above to separate from contact info */
-            margin-top: 80px;
-            font-size: 15px;
-            /* Updated to warm off-white color with reduced opacity */
-            color: rgba(255, 248, 240, 0.7);
-            font-style: italic;
-            /* Centered within its column area */
-            text-align: center;
-        }
+    /* Projects Placeholder */
+    .projects-note {
+        /* Spans center 6 columns to match other content sections */
+        grid-column: 4 / 10;
+        /* Extra space above to separate from contact info */
+        margin-top: 80px;
+        font-size: 15px;
+        /* Updated to warm off-white color with reduced opacity */
+        color: rgba(255, 248, 240, 0.7);
+        font-style: italic;
+        /* Centered within its column area */
+        text-align: center;
+    }
 
         /* Responsive Design */
 
@@ -287,3 +282,4 @@
                 margin-top: 10px;
             }
         }
+       
