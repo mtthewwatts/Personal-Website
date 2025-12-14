@@ -75,8 +75,6 @@
         line-height: 1.6;
         /* Updated to warm off-white color */
         color: #FFF8F0;
-        /* Space below paragraph */
-        margin-bottom: 20px;
         /* Left-aligned text */
         text-align: left;
     }
@@ -225,7 +223,7 @@
         /* Stack links vertically */
         display: flex;
         flex-direction: column;
-        /* Space between each link - adjust for more/less spacing */
+        /* Space between each link*/
         gap: 10px;
         /* Left-aligned links */
         align-items: flex-start;
