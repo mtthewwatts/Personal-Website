@@ -1,178 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Matt Watts – Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Fonts: Montserrat -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <!-- Simple MW Favicon as SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='100%' height='100%' fill='white'/><text x='50%' y='60%' font-size='32' font-family='Montserrat, Arial, sans-serif' text-anchor='middle' fill='black'>MW</text></svg>">
-  <style>
-    body {
-      background: #fff;
-      color: #222;
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3rem;
-      max-width: 1100px;
-      width: 100%;
-      padding: 2rem 1rem;
-    }
-    .left-content {
-      flex: 1 1 0;
-      min-width: 270px;
-      max-width: 540px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .main-message {
-      font-size: 1.18rem;
-      color: #222;
-      margin-bottom: 2.2rem;
-      line-height: 1.6;
-      text-align: left;
-      font-weight: 400;
-    }
-    .contact {
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-      align-items: flex-start;
-      margin-top: 0.5rem;
-      width: 100%;
-    }
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 0.7em;
-      font-size: 1rem;
-      color: #111;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .contact-link:hover {
-      color: #0077b6;
-    }
-    .icon {
-      width: 22px;
-      height: 22px;
-      display: inline-block;
-      vertical-align: middle;
-      fill: #111;
-      transition: fill 0.2s;
-    }
-    .contact-link:hover .icon {
-      fill: #0077b6;
-    }
-    .links-row {
-      display: flex;
-      gap: 1.2rem;
-      margin-top: 1.2rem;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-    }
-    .right-image {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .circle-img {
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #111;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      background: #fff;
-      display: block;
-    }
-    @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-        gap: 2.5rem;
-        padding: 2rem 0.5rem;
-      }
-      .right-image .circle-img {
-        width: 220px;
-        height: 220px;
-      }
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 1rem 0.2rem;
-      }
-      .main-message {
-        font-size: 1rem;
-      }
-      .right-image .circle-img {
-        width: 140px;
-        height: 140px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt's Portfolio</title>
 </head>
 <body>
-  <div class="container">
-    <div class="left-content">
-      <div class="main-message">
-        <h1>Matt Watts</h1>
-        <div class="subtitle">
-          Mechatronics Engineering Student<br>
-          University of Waterloo
+    <div class="container">
+        <div class="grid-container">
+            <!-- PROFILE SECTION: Center 6 columns (4-9) -->
+            <div class="profile-section">
+                <!-- Profile image aligned to right edge of 6-column area -->
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="Profile" class="profile-image">
+                
+                <!-- Introduction text aligned to left edge -->
+                <p class="intro-text">
+                    I'm Matt, a fourth year Mechatronics Engineering student at the University of Waterloo. I have a background in Mechanical Design through previous roles in manufacturing and automation, and I'm looking to bridge into embedded systems design for consumer-facing products for my next experience!
+                </p>
+
+                <!-- Wave divider centered within the section -->
+                <div class="divider">~</div>
+
+                <!-- Personal info text aligned to left edge -->
+                <p class="personal-info">
+                    I spend my personal time working in student advocacy and leadership, exploring my interest of the intersection between art + tech and working at becoming a triathlete (swimming is my downfall 😔).
+                </p>
+            </div>
+
+            <!-- EXPERIENCE SECTION: Center 6 columns (4-9) -->
+            <div class="experience-section">
+                <h2 class="section-title">HIGHLIGHTED EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-left">
+                        <div class="experience-title">Mechanical Designer</div>
+                        <div class="experience-company">Co-Op, Samuel Automation</div>
+                    </div>
+                    <div class="experience-right">
+                        <div class="experience-date">Sept 2025 - Present</div>
+                        <div class="experience-location">Waterloo, Ontario</div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-left">
+                        <div class="experience-title">Mechatronics Research Assistant</div>
+                        <div class="experience-company">Co-Op, University of Waterloo's Ideas Clinic</div>
+                    </div>
+                    <div class="experience-right">
+                        <div class="experience-date">Jan 2025 - Apr 2025</div>
+                        <div class="experience-location">Waterloo, Ontario</div>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-left">
+                        <div class="experience-title">Production Design Intern</div>
+                        <div class="experience-company">Co-Op, Viryl Technologies</div>
+                    </div>
+                    <div class="experience-right">
+                        <div class="experience-date">Sept 2023 - Dec 2023</div>
+                        <div class="experience-location">Toronto, Ontario</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT SECTION: Center 4 columns (5-8), left-aligned -->
+            <div class="contact-section">
+                <h2 class="contact-title">CONNECT</h2>
+                <div class="contact-links">
+                    <a href="mailto:mhwatts@uwaterloo.ca" class="contact-link">mhwatts@uwaterloo.ca</a>
+                    <a href="https://linkedin.com/in/matthewhaddenwatts" class="contact-link"><span>linkedin.com/</span>matthewhaddenwatts</a>
+                    <a href="https://github.com/mtthewwatts" class="contact-link"><span>github.com/</span>mtthewwatts</a>
+                </div>
+            </div>
+
+            <!-- PROJECTS PLACEHOLDER: Center 6 columns (4-9) -->
+            <div class="projects-note">
+                projects section soon :)
+            </div>
         </div>
-        --------------------------------------
-        <br><br>
-        <strong>Thanks for stopping by!</strong><br><br>
-        Unfortunately, my site is under reconstruction and updates right now.<br><br>
-        Best, Matt :)
-      </div>
-      <div class="contact">
-        <a class="contact-link" href="mailto:matthew.watts@uwaterloo.ca">
-          <!-- Email Icon (black/white SVG) -->
-          <svg class="icon" viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm18 2l-8 6-8-6v12h16V6zm-8 4.5L4 6h16l-8 4.5z"/></svg>
-          matthew.watts@uwaterloo.ca
-        </a>
-        <a class="contact-link" href="tel:+18072715163">
-          <!-- Phone Icon (black/white SVG) -->
-          <svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.2.48 2.53.73 3.88.73a1 1 0 011 1v3.5a1 1 0 01-1 1C7.82 22 2 16.18 2 8.5A1 1 0 013 7.5H6.5a1 1 0 011 1c0 1.35.25 2.68.73 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
-          (807) 271-5163
-        </a>
-        <div class="links-row">
-          <a class="contact-link" href="https://www.linkedin.com/in/matthewhaddenwatts/" target="_blank">
-            <!-- LinkedIn Icon (black/white SVG) -->
-            <svg class="icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.29c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.29h-3v-4.5c0-1.07-.02-2.44-1.49-2.44-1.5 0-1.73 1.17-1.73 2.36v4.58h-3v-9h2.89v1.23h.04c.4-.76 1.37-1.56 2.82-1.56 3.01 0 3.57 1.98 3.57 4.56v5.77z"/></svg>
-            LinkedIn
-          </a>
-          <a class="contact-link" href="https://github.com/mtthewwatts" target="_blank">
-            <!-- GitHub Icon (black/white SVG) -->
-            <svg class="icon" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.613-4.042-1.613-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.932 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.399 3-.404 1.02.005 2.04.137 3 .404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.92.43.37.823 1.096.823 2.21 0 1.595-.015 2.88-.015 3.27 0 .32.218.694.825.576C20.565 21.797 24 17.298 24 12c0-6.63-5.373-12-12-12z"/></svg>
-            GitHub
-          </a>
-          <a class="contact-link" href="May13_Resume.pdf" target="_blank">
-            <!-- Resume Icon (black/white SVG, using a simple document icon) -->
-            <svg class="icon" viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5V9h5.5L13 3.5zM6 4h6v5a1 1 0 0 0 1 1h5v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/></svg>
-            Resume
-          </a>
-        </div>
-      </div>
     </div>
-    <div class="right-image">
-      <img src="Assets/headshot.jpg" alt="Matt Watts headshot" class="circle-img">
-    </div>
-  </div>
 </body>
 </html>
