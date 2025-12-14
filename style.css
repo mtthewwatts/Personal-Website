@@ -82,11 +82,9 @@
     /* Wave divider (~) between sections */
     .divider {
         /* Large size for visual impact - adjust for bigger/smaller divider */
-        font-size: 200px;
+        font-size: 150px;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.2);
-        /* Vertical spacing around divider */
-        margin: 5px 0;
         /* Centers the ~ within the 6-column section */
         text-align: center;
     }
