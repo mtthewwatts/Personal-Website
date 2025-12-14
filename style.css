@@ -16,9 +16,11 @@
     /* Main Container */
     .container {
         /* Full viewport height minimum */
-        min-height: 100vh;
+        min-height: 50vh;
         /* Solid dark blue background */
         background: #071A3B;
+        /* Generous padding */
+        padding: 100px 30px;
         /* Updated text color to warm off-white */
         color: #FFF8F0;
     }
@@ -49,14 +51,14 @@
     /* Profile photo styling */
     .profile-image {
      /* Fixed size */
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     /* Makes image circular */
     border-radius: 50%;
     /* Ensures image covers the circle properly */
     object-fit: cover;
     /* Space between image and text below */
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     /* Subtle border around image - adjust opacity or remove entirely */
     border: 4px color #FFF8F0;
     /* Aligns image to the LEFT side of the 6-column area */
@@ -69,9 +71,9 @@
         /* Uses Instrument Sans font */
         font-family: 'Instrument Sans', sans-serif;
         font-size: 20px;
-        letter-spacing: 1 px;
         /* Line spacing for readability */
         line-height: 1.6;
+        margin: 10px auto;
         /* Updated to warm off-white color */
         color: #FFF8F0;
         /* Left-aligned text */
@@ -80,8 +82,8 @@
 
     /* Wave divider (~) between sections */
     .divider {
-        /* Large size for visual impact - adjust for bigger/smaller divider */
-        font-size: 150px;
+        /* Large size for visual impact */
+        font-size: 40px;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.2);
         /* Centers the ~ within the 6-column section */
@@ -93,12 +95,11 @@
         /* Uses Instrument Sans font */
         font-family: 'Instrument Sans', sans-serif;
         font-size: 20px;
-        letter-spacing: 1 px;
         line-height: 1.6;
         /* Updated to warm off-white color */
         color: #FFF8F0;
         /* Space before experience section */
-        margin-bottom: 40x;
+        margin-bottom: 0px;
         /* Left-aligned text */
         text-align: left;
     }
@@ -114,13 +115,13 @@
         /* Uses Instrument Sans font */
         font-family: 'Instrument Sans', sans-serif;
         /* Small caps style text */
-        font-size: 12px;
+        font-size: 16px;
         /* Spacing between letters for all-caps look */
-        letter-spacing: 0.5px;
+        letter-spacing: 1px;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.5);
         /* Space between title and first experience item */
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         font-weight: 100;
     }
 
@@ -131,8 +132,8 @@
         justify-content: space-between;
         align-items: flex-start;
         /* Space between job entries */
-        margin-bottom: 30px;
-        padding-bottom: 30px;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
         /* Subtle divider line between entries - adjust opacity or color */
         border-bottom: 1px solid rgba(255, 248, 240, 0.1);
     }
@@ -153,7 +154,8 @@
         /* Uses Inter font (default body font) */
         font-family: 'Inter', sans-serif;
         /* Larger text with medium weight (less bold) */
-        font-size: 18px;
+        letter-spacing: 0.5px;
+        font-size: 24px;
         font-weight: 500;
         margin-bottom: 5px;
         /* Updated to warm off-white color */
@@ -164,7 +166,8 @@
     .experience-company {
         /* Uses Inter font (default body font) */
         font-family: 'Inter', sans-serif;
-        font-size: 14px;
+        font-size: 16px;
+        margin-top: 8px;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.7);
     }
@@ -179,7 +182,9 @@
     .experience-date {
         /* Uses Inter font (default body font) */
         font-family: 'Inter', sans-serif;
-        font-size: 13px;
+        font-size: 15px;
+        margin-top: 8px;
+        font-style: italic;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.6);
         margin-bottom: 5px;
@@ -189,7 +194,9 @@
     .experience-location {
         /* Uses Inter font (default body font) */
         font-family: 'Inter', sans-serif;
-        font-size: 13px;
+        font-size: 15px;
+        margin-top: 10px;
+        font-style: italic;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.6);
     }
@@ -199,18 +206,18 @@
         /* Spans center 4 columns (columns 5-8) - narrower than other sections */
         grid-column: 5 / 9;
         /* Space above contact section - adjust to move it closer/further from experience */
-        margin-top: 20px;
+        margin-top: -50px;
     }
 
     /* "CONNECT" heading */
     .contact-title {
         /* Uses Instrument Sans font */
         font-family: 'Instrument Sans', sans-serif;
-        font-size: 12px;
-        letter-spacing: 0.5px;
+        font-size: 14px;
+        letter-spacing: 1px;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.5);
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         font-weight: 100;
         /* Left-aligned within the 4-column area */
         text-align: left;
@@ -222,7 +229,7 @@
         display: flex;
         flex-direction: column;
         /* Space between each link*/
-        gap: 10px;
+        gap: 15px;
         /* Left-aligned links */
         align-items: flex-start;
     }
@@ -233,8 +240,9 @@
         font-family: 'Instrument Sans', sans-serif;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.8);
+        letter-spacing: 1px;
         text-decoration: none;
-        font-size: 15px;
+        font-size: 20px;
         /* Smooth color transition on hover */
         transition: color 0.3s ease;
     }
@@ -254,28 +262,27 @@
         /* Spans center 6 columns to match other content sections */
         grid-column: 4 / 10;
         /* Extra space above to separate from contact info */
-        margin-top: 80px;
-        font-size: 15px;
+        margin-top: 40px;
+        font-size: 25px;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.7);
-        font-style: italic;
         /* Centered within its column area */
         text-align: center;
     }
 
-        /* Responsive Design */
+    /* Responsive Design */
 
-        /* Apply these styles on screens 768px wide or smaller */
-        @media (max-width: 768px) {
-            /* Stack experience items vertically on mobile */
-            .experience-item {
-                flex-direction: column;
-            }
-
-            /* Left-align date/location on mobile instead of right-aligned */
-            .experience-right {
-                text-align: left;
-                margin-top: 10px;
-            }
+    /* Apply these styles on screens 768px wide or smaller */
+    @media (max-width: 768px) {
+    /* Stack experience items vertically on mobile */
+    .experience-item {
+            flex-direction: column;
         }
+
+    /* Left-align date/location on mobile instead of right-aligned */
+    .experience-right {
+        text-align: left;
+        margin-top: 10px;
+        }
+    }
        
