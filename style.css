@@ -203,12 +203,10 @@
         color: rgba(255, 248, 240, 0.6);
     }
 
-    /* Contact Section */
+    /* Connect Section */
     .contact-section {
         /* Spans center 4 columns (columns 5-8) - narrower than other sections */
         grid-column: 5 / 9;
-        /* Space above contact section - adjust to move it closer/further from experience */
-        margin-top: -50px;
     }
 
     /* "CONNECT" heading */
