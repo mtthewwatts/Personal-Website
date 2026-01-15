@@ -262,7 +262,6 @@
         /* Spans center 6 columns to match other content sections */
         grid-column: 4 / 10;
         /* Extra space above to separate from contact info */
-        margin-top: 40px;
         font-size: 25px;
         /* Updated to warm off-white color with reduced opacity */
         color: rgba(255, 248, 240, 0.7);
@@ -274,9 +273,9 @@
     .bottom-decoration {
         /* Spans 10 columns, centered (columns 2-12) */
         grid-column: 2 / 12;
+        margin-top: -40px;
         /* Center the image within its area */
         text-align: center;
-        padding-bottom: 0;
     }
 
     .bottom-decoration img {
